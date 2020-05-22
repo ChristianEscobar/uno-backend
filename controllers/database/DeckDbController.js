@@ -1,9 +1,11 @@
+'use strict';
+
 const Deck = require('../../models/Deck');
 
-class DeckController {
-	async addNewShuffledDeck(shuffledDeck) {
-		return Deck.insertMany(shuffledDeck);
+class DeckDbController {
+	async addDeck(deck) {
+		return Deck.insertMany(deck);
 	}
 }
 
-module.exports = DeckController;
+module.exports = DeckDbController;

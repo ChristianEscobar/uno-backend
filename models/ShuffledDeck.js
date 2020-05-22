@@ -3,12 +3,16 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const deckSchema = new Schema({
+const shuffledDeckSchema = new Schema({
 	seqNum: { type: Number, required: true },
 	color: { type: String, required: true },
 	value: { type: String, require: true },
 });
 
-const Deck = mongoose.model('Deck', deckSchema, 'Deck');
+const ShuffledDeck = mongoose.model(
+	'ShuffledDeck',
+	shuffledDeckSchema,
+	'ShuffledDeck'
+);
 
-module.exports = Deck;
+module.exports = ShuffledDeck;
