@@ -1,13 +1,13 @@
+'use strict';
+
 const routes = require('express').Router();
 const deckController = require('./controllers/routes/deckController');
+const gameController = require('./controllers/routes/gameController');
 
-// Add route controllers
-routes.get('/ping', (req, res) => {
-	res.status(200).json({ message: 'Pong! Application is up and running' });
-});
+routes.post('/startGame', gameController.start_game);
 
-routes.get('/createDeck', deckController.create_deck_get);
+// routes.get('/createDeck', deckController.create_deck_get);
 
-routes.get('/shuffleDeck', deckController.shuffle_deck_get);
+// routes.get('/shuffleDeck', deckController.shuffle_deck_get);
 
 module.exports = { routes };
