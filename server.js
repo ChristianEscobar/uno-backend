@@ -1,7 +1,10 @@
+'use strict';
+
 const express = require('express');
 const bodyParser = require('body-parser');
-const mongoose = require('mongoose');
 const { routes } = require('./routes');
+const initialize = require('./utils/initialize');
+const DBcon = require('./utils/database/DBcon');
 
 const app = express();
 app.use(bodyParser.json());
@@ -9,11 +12,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 const port = process.env.PORT || 3000;
 
-const start = function start() {
-	mongoose.connect(process.env.DATABASE, {
-		useNewUrlParser: true,
-		useUnifiedTopology: true,
-	});
+const startServer = async function startServer() {
+	const dbCon = new DBcon();
+	await dbCon.connect();
 	app.use('/', routes);
 
 	app.listen(port, () => {
@@ -22,5 +23,5 @@ const start = function start() {
 };
 
 module.exports = {
-	start,
+	startServer,
 };

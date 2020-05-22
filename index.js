@@ -1,8 +1,10 @@
+'use strict';
+
 require('dotenv').config();
-const { start } = require('./server');
+const { startServer } = require('./server');
 
 try {
-	start();
+	startServer();
 } catch (err) {
 	console.error(
 		`Error encountered while attempting to run server: ${err.message}`
