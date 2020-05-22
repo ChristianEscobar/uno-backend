@@ -1,3 +1,5 @@
+'use strict';
+
 const colors = ['red', 'yellow', 'green', 'blue'];
 const values = [
 	'0',
