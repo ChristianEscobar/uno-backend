@@ -1,7 +1,7 @@
 'use strict';
 
 require('dotenv').config();
-const { startServer } = require('./server');
+const { startServer } = require('./server/server');
 
 try {
 	startServer();

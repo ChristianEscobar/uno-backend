@@ -3,8 +3,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const { routes } = require('./routes');
-const initialize = require('./utils/initialize');
-const DBcon = require('./utils/database/DBcon');
+const initialize = require('../utils/initialize');
+const DBcon = require('../utils/database/DBcon');
 
 const app = express();
 app.use(bodyParser.json());

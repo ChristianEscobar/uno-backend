@@ -1,8 +1,8 @@
 'use strict';
 
 const routes = require('express').Router();
-const deckController = require('./controllers/routes/deckController');
-const gameController = require('./controllers/routes/gameController');
+const deckController = require('../controllers/routes/deckController');
+const gameController = require('../controllers/routes/gameController');
 
 routes.post('/startGame', gameController.start_game);
 
