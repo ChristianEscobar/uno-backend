@@ -15,7 +15,7 @@ const port = process.env.PORT || 3000;
 const startServer = async function startServer() {
 	const dbCon = new DBcon();
 	await dbCon.connect();
-	await initialize.cardsInDeck();
+	await initialize.populateDeck();
 	app.use('/', routes);
 
 	app.listen(port, () => {
