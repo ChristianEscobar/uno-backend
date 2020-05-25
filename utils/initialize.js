@@ -2,12 +2,12 @@
 const DeckDbController = require('../controllers/database/DeckDbController');
 const { createDeck } = require('./createDeck');
 
-exports.createDeck = async function createDeck(mongooseCon) {
+exports.populateDeck = async function populateDeck() {
 	try {
-		await mongooseCon.dropCollection('Deck');
-		const deck = createDeck();
 		const deckDbController = new DeckDbController();
-		await deckDbController.addDeck(deck);
+		await deckDbController.deleteDeck();
+		const newDeck = createDeck();
+		await deckDbController.addDeck(newDeck);
 	} catch (error) {
 		throw new Error(`Initialization error encountered: ${error.message}`);
 	}
