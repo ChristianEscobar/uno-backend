@@ -9,6 +9,6 @@ const gameSchema = new Schema({
 	endedOn: { type: Date },
 });
 
-const Game = mongoose.model('Game', gameSchema);
+const Game = mongoose.model('Game', gameSchema, 'Games');
 
 module.exports = Game;
