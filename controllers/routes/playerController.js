@@ -13,7 +13,7 @@ exports.add_player = async function add_player(req, res) {
 	}
 };
 
-exports.get_players = async function get_players(req, res) {
+exports.players_get = async function get_players(req, res) {
 	try {
 		const playerDbController = new PlayerDbController();
 		const result = await playerDbController.availablePlayers(

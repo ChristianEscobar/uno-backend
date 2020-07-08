@@ -18,6 +18,14 @@ class DeckDbController {
 			throw new Error(`Error encountered on delete: ${err.message}`);
 		}
 	}
+
+	async getDeck() {
+		try {
+			return Deck.find({});
+		} catch (err) {
+			throw new Error(`Error encountered on find: ${err.message}`);
+		}
+	}
 }
 
 module.exports = DeckDbController;

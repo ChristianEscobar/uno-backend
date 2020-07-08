@@ -4,7 +4,7 @@ const ShuffledDeck = require('../../models/ShuffledDeck');
 
 class ShuffledDeckDbController {
 	async addShuffledDeck(shuffledDeck) {
-		return Deck.insertMany(shuffledDeck);
+		return ShuffledDeck.insertMany(shuffledDeck);
 	}
 }
 

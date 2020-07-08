@@ -2,7 +2,11 @@
 
 const Shuffle = require('shuffle');
 
-const shuffleDeck = function shuffledDeck(deck) {
+/**
+ * Shuffles the specified deck
+ * @param {Object} deck
+ */
+const shuffleDeck = function shuffleDeck(deck) {
 	return Shuffle.shuffle({ deck });
 };
 
